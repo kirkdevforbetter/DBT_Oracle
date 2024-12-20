@@ -230,3 +230,601 @@ ImportError: cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Use
 [0m12:46:51.562018 [debug] [MainThread]: Command `dbt debug` failed at 12:46:51.562018 after 0.27 seconds
 [0m12:46:51.562018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C45688A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4969C850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4969C1F0>]}
 [0m12:46:51.562018 [debug] [MainThread]: Flushing usage events
+[0m15:34:35.747965 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027929148A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002792D05B9D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002792D05BBB0>]}
+
+
+============================== 15:34:35.751893 | f5368c37-2c66-4c3b-937a-ae210dfb1e0a ==============================
+[0m15:34:35.751893 [info ] [MainThread]: Running with dbt=1.6.18
+[0m15:34:35.760400 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:34:35.761434 [info ] [MainThread]: dbt version: 1.6.18
+[0m15:34:35.762736 [info ] [MainThread]: python version: 3.9.8
+[0m15:34:35.763736 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m15:34:35.765749 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m15:34:35.799735 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m15:34:35.801736 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m15:34:35.924895 [error] [MainThread]: Encountered an error:
+cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+[0m15:34:35.954527 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\main.py", line 441, in debug
+    results = task.run()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 122, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 1, in <module>
+    from dbt.adapters.snowflake.column import SnowflakeColumn  # noqa
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\column.py", line 4, in <module>
+    from dbt.exceptions import RuntimeException
+ImportError: cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+
+[0m15:34:35.959528 [debug] [MainThread]: Command `dbt debug` failed at 15:34:35.959528 after 0.35 seconds
+[0m15:34:35.960600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027929148A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002792D15D1F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002792D15D190>]}
+[0m15:34:35.961601 [debug] [MainThread]: Flushing usage events
+[0m15:50:19.673629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B105498A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1093AC940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1093ACB20>]}
+
+
+============================== 15:50:19.676600 | 80afdb3e-2c2e-48ea-80df-27c17bda7f7c ==============================
+[0m15:50:19.676600 [info ] [MainThread]: Running with dbt=1.6.18
+[0m15:50:19.684322 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:50:19.685629 [info ] [MainThread]: dbt version: 1.6.18
+[0m15:50:19.686632 [info ] [MainThread]: python version: 3.9.8
+[0m15:50:19.688632 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m15:50:19.691634 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m15:50:19.727062 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m15:50:19.728564 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m15:50:19.853325 [error] [MainThread]: Encountered an error:
+cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+[0m15:50:19.874324 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\main.py", line 441, in debug
+    results = task.run()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 122, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 1, in <module>
+    from dbt.adapters.snowflake.column import SnowflakeColumn  # noqa
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\column.py", line 4, in <module>
+    from dbt.exceptions import RuntimeException
+ImportError: cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+
+[0m15:50:19.881325 [debug] [MainThread]: Command `dbt debug` failed at 15:50:19.880325 after 0.34 seconds
+[0m15:50:19.882325 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B105498A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1094AD670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1094AD040>]}
+[0m15:50:19.883325 [debug] [MainThread]: Flushing usage events
+[0m15:52:07.980704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408B0C8970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408EFDB970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408EFDBB50>]}
+
+
+============================== 15:52:07.982370 | f85d7daf-c556-4f02-9ba5-2342a0ef759d ==============================
+[0m15:52:07.982370 [info ] [MainThread]: Running with dbt=1.6.18
+[0m15:52:07.990579 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m15:52:07.991929 [info ] [MainThread]: dbt version: 1.6.18
+[0m15:52:07.993440 [info ] [MainThread]: python version: 3.9.8
+[0m15:52:07.994444 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m15:52:07.998444 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m15:52:08.033158 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m15:52:08.035064 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m15:52:08.143725 [error] [MainThread]: Encountered an error:
+cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+[0m15:52:08.148443 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\main.py", line 441, in debug
+    results = task.run()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 122, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 1, in <module>
+    from dbt.adapters.snowflake.column import SnowflakeColumn  # noqa
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\column.py", line 4, in <module>
+    from dbt.exceptions import RuntimeException
+ImportError: cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+
+[0m15:52:08.152673 [debug] [MainThread]: Command `dbt debug` failed at 15:52:08.152673 after 0.28 seconds
+[0m15:52:08.153673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408B0C8970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408F0DD190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002408F0DD1C0>]}
+[0m15:52:08.154672 [debug] [MainThread]: Flushing usage events
+[0m15:53:46.244407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B863B8970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B8A29B970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B8A29BB50>]}
+
+
+============================== 15:53:46.252637 | 8fe50bf7-2e63-420c-a987-e80f45d98c1c ==============================
+[0m15:53:46.252637 [info ] [MainThread]: Running with dbt=1.6.18
+[0m15:53:46.253978 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m15:53:46.255836 [info ] [MainThread]: dbt version: 1.6.18
+[0m15:53:46.257720 [info ] [MainThread]: python version: 3.9.8
+[0m15:53:46.258726 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m15:53:46.262726 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m15:53:46.290040 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m15:53:46.291512 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m15:53:46.369626 [error] [MainThread]: Encountered an error:
+cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+[0m15:53:46.378871 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\main.py", line 441, in debug
+    results = task.run()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 122, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 1, in <module>
+    from dbt.adapters.snowflake.column import SnowflakeColumn  # noqa
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\column.py", line 4, in <module>
+    from dbt.exceptions import RuntimeException
+ImportError: cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+
+[0m15:53:46.383127 [debug] [MainThread]: Command `dbt debug` failed at 15:53:46.383127 after 0.24 seconds
+[0m15:53:46.385144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B863B8970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B8A39C190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B8A39C1C0>]}
+[0m15:53:46.386502 [debug] [MainThread]: Flushing usage events
+[0m16:01:29.760999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D2A87B8A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D2AC6CC8B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D2AC6CCA90>]}
+
+
+============================== 16:01:29.760999 | 7eae5d82-17d2-4cb1-ae6c-d328d09e1bfe ==============================
+[0m16:01:29.760999 [info ] [MainThread]: Running with dbt=1.6.18
+[0m16:01:29.776405 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:01:29.776405 [info ] [MainThread]: dbt version: 1.6.18
+[0m16:01:29.777952 [info ] [MainThread]: python version: 3.9.8
+[0m16:01:29.779066 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m16:01:29.780514 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m16:01:29.801862 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m16:01:29.804852 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m16:01:29.882621 [error] [MainThread]: Encountered an error:
+cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+[0m16:01:29.887922 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\main.py", line 441, in debug
+    results = task.run()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 122, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 1, in <module>
+    from dbt.adapters.snowflake.column import SnowflakeColumn  # noqa
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\column.py", line 4, in <module>
+    from dbt.exceptions import RuntimeException
+ImportError: cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+
+[0m16:01:29.890954 [debug] [MainThread]: Command `dbt debug` failed at 16:01:29.890954 after 0.23 seconds
+[0m16:01:29.890954 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D2A87B8A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D2AC7CE4F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D2AC7CE4C0>]}
+[0m16:01:29.891959 [debug] [MainThread]: Flushing usage events
+[0m16:15:04.580134 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F314A88A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F31899C910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F31899CAF0>]}
+
+
+============================== 16:15:04.580134 | 758cecca-7e3f-49e5-9ffd-7c4e7aeb5a88 ==============================
+[0m16:15:04.580134 [info ] [MainThread]: Running with dbt=1.6.18
+[0m16:15:04.590513 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:15:04.590513 [info ] [MainThread]: dbt version: 1.6.18
+[0m16:15:04.591870 [info ] [MainThread]: python version: 3.9.8
+[0m16:15:04.593870 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m16:15:04.594871 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m16:15:04.615234 [error] [MainThread]: Encountered an error:
+cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+[0m16:15:04.627931 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\main.py", line 441, in debug
+    results = task.run()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 122, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 1, in <module>
+    from dbt.adapters.snowflake.column import SnowflakeColumn  # noqa
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\column.py", line 4, in <module>
+    from dbt.exceptions import RuntimeException
+ImportError: cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+
+[0m16:15:04.634047 [debug] [MainThread]: Command `dbt debug` failed at 16:15:04.634047 after 0.16 seconds
+[0m16:15:04.636048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F314A88A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F31899CD00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F31899CAF0>]}
+[0m16:15:04.637046 [debug] [MainThread]: Flushing usage events
+[0m16:16:39.479805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000280391E8880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002803D0DB970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002803D0DBB50>]}
+
+
+============================== 16:16:39.479805 | e296f59a-a00e-4b56-b3e2-c34c41c894a4 ==============================
+[0m16:16:39.479805 [info ] [MainThread]: Running with dbt=1.6.18
+[0m16:16:39.489244 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:16:39.489244 [info ] [MainThread]: dbt version: 1.6.18
+[0m16:16:39.490744 [info ] [MainThread]: python version: 3.9.8
+[0m16:16:39.491388 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m16:16:39.492893 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m16:16:39.501602 [info ] [MainThread]: Using profiles dir at C:\Users\KTagon\.dbt
+[0m16:16:39.503830 [info ] [MainThread]: Using profiles.yml file at C:\Users\KTagon\.dbt\profiles.yml
+[0m16:16:39.503830 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\KTagon\Documents\GitHub\DBT_Oracle\dbt_project.yml
+[0m16:16:39.505320 [info ] [MainThread]: Configuration:
+[0m16:16:39.506715 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m16:16:39.508166 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m16:16:39.509465 [info ] [MainThread]: Required dependencies:
+[0m16:16:39.511978 [debug] [MainThread]: Executing "git --help"
+[0m16:16:39.595672 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:16:39.596686 [debug] [MainThread]: STDERR: "b''"
+[0m16:16:39.596686 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:16:39.597989 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m16:16:39.598994 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m16:16:39.600004 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  The profile 'OracleDB_training' does not have a target named 'dev1'. The valid target names for this profile are:
+   - dev
+
+
+[0m16:16:39.601046 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\KTagon\Documents\GitHub\DBT_Oracle\dbt_project.yml> not found
+
+[0m16:16:39.602155 [debug] [MainThread]: Command `dbt debug` failed at 16:16:39.602155 after 0.23 seconds
+[0m16:16:39.602155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000280391E8880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002803D0DB820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002803D0DB8B0>]}
+[0m16:16:39.603177 [debug] [MainThread]: Flushing usage events
+[0m16:20:08.629161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B35A78A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B3997B9A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B3997BB80>]}
+
+
+============================== 16:20:08.629161 | 2e6e55a8-2b0a-4c91-8f2e-a089c8f9341c ==============================
+[0m16:20:08.629161 [info ] [MainThread]: Running with dbt=1.6.18
+[0m16:20:08.638324 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m16:20:08.639765 [info ] [MainThread]: dbt version: 1.6.18
+[0m16:20:08.640767 [info ] [MainThread]: python version: 3.9.8
+[0m16:20:08.643782 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m16:20:08.646773 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m16:20:08.655275 [info ] [MainThread]: Using profiles dir at C:\Users\KTagon\.dbt
+[0m16:20:08.657276 [info ] [MainThread]: Using profiles.yml file at C:\Users\KTagon\.dbt\profiles.yml
+[0m16:20:08.658276 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\KTagon\Documents\GitHub\DBT_Oracle\dbt_project.yml
+[0m16:20:08.659517 [info ] [MainThread]: Configuration:
+[0m16:20:08.660940 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m16:20:08.663592 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m16:20:08.664685 [info ] [MainThread]: Required dependencies:
+[0m16:20:08.665996 [debug] [MainThread]: Executing "git --help"
+[0m16:20:08.776266 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:20:08.778546 [debug] [MainThread]: STDERR: "b''"
+[0m16:20:08.779551 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:20:08.781005 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m16:20:08.781005 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m16:20:08.782463 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  The profile 'OracleDB_training' does not have a target named 'dev1'. The valid target names for this profile are:
+   - dev
+
+
+[0m16:20:08.783463 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\KTagon\Documents\GitHub\DBT_Oracle\dbt_project.yml> not found
+
+[0m16:20:08.785692 [debug] [MainThread]: Command `dbt debug` failed at 16:20:08.785692 after 0.26 seconds
+[0m16:20:08.786711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B35A78A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B3997B850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B3997B8E0>]}
+[0m16:20:08.787717 [debug] [MainThread]: Flushing usage events
+[0m16:22:18.159179 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024292B78970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024296A8C940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024296A8CB20>]}
+
+
+============================== 16:22:18.174995 | c631a9b4-91c3-4001-84b8-0ee4adaabb75 ==============================
+[0m16:22:18.174995 [info ] [MainThread]: Running with dbt=1.6.18
+[0m16:22:18.176840 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:22:18.178305 [info ] [MainThread]: dbt version: 1.6.18
+[0m16:22:18.179433 [info ] [MainThread]: python version: 3.9.8
+[0m16:22:18.180449 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m16:22:18.184778 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m16:22:18.209019 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m16:22:18.210032 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m16:22:18.282221 [info ] [MainThread]: Using profiles dir at C:\Users\KTagon\.dbt
+[0m16:22:18.282889 [info ] [MainThread]: Using profiles.yml file at C:\Users\KTagon\.dbt\profiles.yml
+[0m16:22:18.284893 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\KTagon\Documents\GitHub\DBT_Oracle\dbt_project.yml
+[0m16:22:18.288895 [info ] [MainThread]: adapter type: oracle
+[0m16:22:18.289893 [info ] [MainThread]: adapter version: 1.6.14
+[0m16:22:18.290892 [info ] [MainThread]: Configuration:
+[0m16:22:18.290892 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:22:18.292399 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m16:22:18.294405 [info ] [MainThread]: Required dependencies:
+[0m16:22:18.295402 [debug] [MainThread]: Executing "git --help"
+[0m16:22:18.362720 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:22:18.363722 [debug] [MainThread]: STDERR: "b''"
+[0m16:22:18.364724 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:22:18.365723 [info ] [MainThread]: Connection:
+[0m16:22:18.366723 [info ] [MainThread]:   user: hr
+[0m16:22:18.367722 [info ] [MainThread]:   database: None
+[0m16:22:18.367722 [info ] [MainThread]:   schema: hr
+[0m16:22:18.368723 [info ] [MainThread]:   protocol: tcps
+[0m16:22:18.369723 [info ] [MainThread]:   host: localhost
+[0m16:22:18.369723 [info ] [MainThread]:   port: 1521
+[0m16:22:18.370722 [info ] [MainThread]:   tns_name: None
+[0m16:22:18.371722 [info ] [MainThread]:   service: orcl.dsilan.cherryroad.com
+[0m16:22:18.371722 [info ] [MainThread]:   connection_string: None
+[0m16:22:18.372722 [info ] [MainThread]:   shardingkey: []
+[0m16:22:18.373722 [info ] [MainThread]:   supershardingkey: []
+[0m16:22:18.374722 [info ] [MainThread]:   cclass: None
+[0m16:22:18.375722 [info ] [MainThread]:   purity: None
+[0m16:22:18.376723 [info ] [MainThread]:   retry_count: 1
+[0m16:22:18.377726 [info ] [MainThread]:   retry_delay: 3
+[0m16:22:18.379725 [info ] [MainThread]:   oml_cloud_service_url: None
+[0m16:22:18.380727 [info ] [MainThread]:   session_info: {}
+[0m16:22:18.382726 [info ] [MainThread]: Registered adapter: oracle=1.6.14
+[0m16:22:18.383727 [debug] [MainThread]: Acquiring new oracle connection 'debug'
+[0m16:22:18.384727 [debug] [MainThread]: Using oracle connection "debug"
+[0m16:22:18.384727 [debug] [MainThread]: On debug: select 1 as id from dual
+[0m16:22:18.385739 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:22:18.385739 [debug] [MainThread]: oracle adapter: Attempting to connect using Oracle method: 'OracleConnectionMethod.HOST' and dsn: 'tcps://localhost:1521/orcl.dsilan.cherryroad.com?retry_count=1&retry_delay=3'
+[0m16:24:25.257199 [info ] [MainThread]: oracle adapter: Got an error when attempting to open an Oracle connection: 'ORA-28864: SSL connection closed gracefully'
+[0m16:24:25.257199 [info ] [MainThread]: oracle adapter: Rolling back transaction.
+[0m16:24:25.257199 [debug] [MainThread]: On debug: No close available on handle
+[0m16:24:25.257199 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m16:24:25.266742 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m16:24:25.266742 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\KTagon\Documents\GitHub\DBT_Oracle\dbt_project.yml> not found
+
+[0m16:24:25.266742 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  ORA-28864: SSL connection closed gracefully
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m16:24:25.274729 [debug] [MainThread]: Command `dbt debug` failed at 16:24:25.274729 after 127.22 seconds
+[0m16:24:25.274729 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m16:24:25.274729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024292B78970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024296B8F220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024296B8FB50>]}
+[0m16:24:25.274729 [debug] [MainThread]: Flushing usage events
+[0m16:58:16.671916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A93C928970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A94082C940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A94082CB20>]}
+
+
+============================== 16:58:16.682390 | 85bf8db7-3949-4427-8873-dc6f9dd0f7dc ==============================
+[0m16:58:16.682390 [info ] [MainThread]: Running with dbt=1.6.18
+[0m16:58:16.684416 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m16:58:16.684416 [info ] [MainThread]: dbt version: 1.6.18
+[0m16:58:16.686040 [info ] [MainThread]: python version: 3.9.8
+[0m16:58:16.688042 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m16:58:16.690054 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m16:58:16.722044 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m16:58:16.724148 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m16:58:16.831413 [info ] [MainThread]: Using profiles dir at C:\Users\KTagon\.dbt
+[0m16:58:16.831413 [info ] [MainThread]: Using profiles.yml file at C:\Users\KTagon\.dbt\profiles.yml
+[0m16:58:16.834318 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\KTagon\Documents\GitHub\DBT_Oracle\dbt_project.yml
+[0m16:58:16.838528 [info ] [MainThread]: adapter type: oracle
+[0m16:58:16.838528 [info ] [MainThread]: adapter version: 1.6.14
+[0m16:58:16.839529 [info ] [MainThread]: Configuration:
+[0m16:58:16.840529 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:58:16.841530 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m16:58:16.842531 [info ] [MainThread]: Required dependencies:
+[0m16:58:16.844543 [debug] [MainThread]: Executing "git --help"
+[0m16:58:16.916278 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:58:16.916278 [debug] [MainThread]: STDERR: "b''"
+[0m16:58:16.917292 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:58:16.918291 [info ] [MainThread]: Connection:
+[0m16:58:16.919292 [info ] [MainThread]:   user: hr
+[0m16:58:16.919292 [info ] [MainThread]:   database: None
+[0m16:58:16.920291 [info ] [MainThread]:   schema: hr
+[0m16:58:16.921291 [info ] [MainThread]:   protocol: tcps
+[0m16:58:16.921291 [info ] [MainThread]:   host: localhost
+[0m16:58:16.922291 [info ] [MainThread]:   port: 1521
+[0m16:58:16.922291 [info ] [MainThread]:   tns_name: None
+[0m16:58:16.923292 [info ] [MainThread]:   service: orcl.dsilan.cherryroad.com
+[0m16:58:16.924293 [info ] [MainThread]:   connection_string: None
+[0m16:58:16.925292 [info ] [MainThread]:   shardingkey: []
+[0m16:58:16.925292 [info ] [MainThread]:   supershardingkey: []
+[0m16:58:16.926293 [info ] [MainThread]:   cclass: None
+[0m16:58:16.926293 [info ] [MainThread]:   purity: None
+[0m16:58:16.927291 [info ] [MainThread]:   retry_count: 1
+[0m16:58:16.927291 [info ] [MainThread]:   retry_delay: 3
+[0m16:58:16.928292 [info ] [MainThread]:   oml_cloud_service_url: None
+[0m16:58:16.928292 [info ] [MainThread]:   session_info: {}
+[0m16:58:16.929293 [info ] [MainThread]: Registered adapter: oracle=1.6.14
+[0m16:58:16.930291 [debug] [MainThread]: Acquiring new oracle connection 'debug'
+[0m16:58:16.930291 [debug] [MainThread]: Using oracle connection "debug"
+[0m16:58:16.931291 [debug] [MainThread]: On debug: select 1 as id from dual
+[0m16:58:16.932036 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:58:16.932091 [debug] [MainThread]: oracle adapter: Attempting to connect using Oracle method: 'OracleConnectionMethod.HOST' and dsn: 'tcps://localhost:1521/orcl.dsilan.cherryroad.com?retry_count=1&retry_delay=3'
+[0m17:00:20.643118 [info ] [MainThread]: oracle adapter: Got an error when attempting to open an Oracle connection: 'ORA-28864: SSL connection closed gracefully'
+[0m17:00:20.645118 [info ] [MainThread]: oracle adapter: Rolling back transaction.
+[0m17:00:20.646117 [debug] [MainThread]: On debug: No close available on handle
+[0m17:00:20.647116 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m17:00:20.647670 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m17:00:20.648672 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\KTagon\Documents\GitHub\DBT_Oracle\dbt_project.yml> not found
+
+[0m17:00:20.650687 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  ORA-28864: SSL connection closed gracefully
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m17:00:20.651672 [debug] [MainThread]: Command `dbt debug` failed at 17:00:20.651672 after 124.10 seconds
+[0m17:00:20.652672 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:00:20.652672 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A93C928970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A94092F220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A94092FB50>]}
+[0m17:00:20.653672 [debug] [MainThread]: Flushing usage events
