@@ -1,0 +1,232 @@
+[0m12:21:43.309664 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016618078A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001661BF5AA60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001661BF5ABB0>]}
+
+
+============================== 12:21:43.326400 | f0f62f40-e6d7-4e81-bcdc-d18ac6a7b5b7 ==============================
+[0m12:21:43.326400 [info ] [MainThread]: Running with dbt=1.6.18
+[0m12:21:43.326400 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:22:25.841054 [debug] [MainThread]: Starter project path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\include\starter_project
+[0m12:22:26.256212 [info ] [MainThread]: 
+Your new dbt project "OracleDB_Training" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:22:26.261049 [info ] [MainThread]: Setting up your profile.
+[0m12:22:31.424680 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m12:22:31.427188 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m12:22:57.530310 [error] [MainThread]: Encountered an error:
+
+[0m12:22:57.550230 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\main.py", line 485, in init
+    results = task.run()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\init.py", line 308, in run
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\click\termui.py", line 166, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\click\termui.py", line 149, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m12:22:57.550230 [debug] [MainThread]: Command `dbt init` failed at 12:22:57.550230 after 74.49 seconds
+[0m12:22:57.558235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016618078A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001661C05CC10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001661C05CD30>]}
+[0m12:22:57.559813 [debug] [MainThread]: Flushing usage events
+[0m12:24:01.145282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CF26878A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CF2A76C940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CF2A76CA90>]}
+
+
+============================== 12:24:01.148792 | ff8feb8e-5535-44f3-9361-75a9e11fe6cd ==============================
+[0m12:24:01.148792 [info ] [MainThread]: Running with dbt=1.6.18
+[0m12:24:01.148792 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:24:26.004345 [info ] [MainThread]: A project called OracleDB_Training already exists here.
+[0m12:24:26.008431 [debug] [MainThread]: Command `dbt init` succeeded at 12:24:26.008431 after 24.98 seconds
+[0m12:24:26.008431 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CF26878A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CF2A76C850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CF2A76CD90>]}
+[0m12:24:26.008431 [debug] [MainThread]: Flushing usage events
+[0m12:24:50.429053 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176BA868A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176BE76B9D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176BE76BB20>]}
+
+
+============================== 12:24:50.441550 | c5d38a5a-0f5d-4ecf-a8ba-40f8e5a84203 ==============================
+[0m12:24:50.441550 [info ] [MainThread]: Running with dbt=1.6.18
+[0m12:24:50.444445 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:25:00.497815 [debug] [MainThread]: Starter project path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\include\starter_project
+[0m12:25:00.655625 [info ] [MainThread]: 
+Your new dbt project "OracleDB_training" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:25:00.663980 [info ] [MainThread]: Setting up your profile.
+[0m12:25:02.906037 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m12:25:02.906037 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m12:27:58.175873 [info ] [MainThread]: Profile OracleDB_training written to C:\Users\KTagon\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m12:27:58.177872 [debug] [MainThread]: Command `dbt init` succeeded at 12:27:58.177872 after 187.88 seconds
+[0m12:27:58.178875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176BA868A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176BE76BAF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176BE76BA00>]}
+[0m12:27:58.179873 [debug] [MainThread]: Flushing usage events
+[0m12:46:18.272758 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC8D198A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC910AC940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC910ACB20>]}
+
+
+============================== 12:46:18.282879 | 0e67ec02-2539-45f8-a0bb-8a4833d0f005 ==============================
+[0m12:46:18.282879 [info ] [MainThread]: Running with dbt=1.6.18
+[0m12:46:18.282879 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m12:46:18.282879 [info ] [MainThread]: dbt version: 1.6.18
+[0m12:46:18.282879 [info ] [MainThread]: python version: 3.9.8
+[0m12:46:18.282879 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m12:46:18.290386 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m12:46:18.322760 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m12:46:18.322760 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m12:46:18.477619 [error] [MainThread]: Encountered an error:
+cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+[0m12:46:18.510991 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\main.py", line 441, in debug
+    results = task.run()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 122, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 1, in <module>
+    from dbt.adapters.snowflake.column import SnowflakeColumn  # noqa
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\column.py", line 4, in <module>
+    from dbt.exceptions import RuntimeException
+ImportError: cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+
+[0m12:46:18.510991 [debug] [MainThread]: Command `dbt debug` failed at 12:46:18.510991 after 0.48 seconds
+[0m12:46:18.518075 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC8D198A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC911AC700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC911AC220>]}
+[0m12:46:18.518075 [debug] [MainThread]: Flushing usage events
+[0m12:46:51.432255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C45688A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4959BA00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4959BBE0>]}
+
+
+============================== 12:46:51.439263 | a5b68f39-593a-4581-a08c-4c71f3c62a24 ==============================
+[0m12:46:51.439263 [info ] [MainThread]: Running with dbt=1.6.18
+[0m12:46:51.441865 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m12:46:51.441865 [info ] [MainThread]: dbt version: 1.6.18
+[0m12:46:51.443667 [info ] [MainThread]: python version: 3.9.8
+[0m12:46:51.444264 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m12:46:51.444264 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m12:46:51.471873 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m12:46:51.471873 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m12:46:51.554005 [error] [MainThread]: Encountered an error:
+cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+[0m12:46:51.554005 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\cli\main.py", line 441, in debug
+    results = task.run()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 122, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\task\debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\config\profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 1, in <module>
+    from dbt.adapters.snowflake.column import SnowflakeColumn  # noqa
+  File "C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\adapters\snowflake\column.py", line 4, in <module>
+    from dbt.exceptions import RuntimeException
+ImportError: cannot import name 'RuntimeException' from 'dbt.exceptions' (C:\Users\KTagon\AppData\Local\Programs\Python\Python39\lib\site-packages\dbt\exceptions.py)
+
+[0m12:46:51.562018 [debug] [MainThread]: Command `dbt debug` failed at 12:46:51.562018 after 0.27 seconds
+[0m12:46:51.562018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C45688A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4969C850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4969C1F0>]}
+[0m12:46:51.562018 [debug] [MainThread]: Flushing usage events
