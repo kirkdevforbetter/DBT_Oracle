@@ -828,3 +828,61 @@ https://docs.getdbt.com/docs/configure-your-profile
 [0m17:00:20.652672 [debug] [MainThread]: Connection 'debug' was properly closed.
 [0m17:00:20.652672 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A93C928970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A94092F220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A94092FB50>]}
 [0m17:00:20.653672 [debug] [MainThread]: Flushing usage events
+[0m17:03:00.887104 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F33C4D8A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3403EB9A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F3403EBB80>]}
+
+
+============================== 17:03:00.887104 | 18a5c351-8299-4b8f-9cc1-36984f602dc5 ==============================
+[0m17:03:00.887104 [info ] [MainThread]: Running with dbt=1.6.18
+[0m17:03:00.896187 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\KTagon\\.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:03:00.897360 [info ] [MainThread]: dbt version: 1.6.18
+[0m17:03:00.898573 [info ] [MainThread]: python version: 3.9.8
+[0m17:03:00.899572 [info ] [MainThread]: python path: C:\Users\KTagon\AppData\Local\Programs\Python\Python39\python.exe
+[0m17:03:00.902861 [info ] [MainThread]: os info: Windows-10-10.0.22631
+[0m17:03:00.926333 [info ] [MainThread]: oracle adapter: Running in cx mode
+[0m17:03:00.928336 [warn ] [MainThread]: oracle adapter: [[33mWARNING[0m]: [31mcx_oracle is no longer maintained, use python-oracledb
+
+To switch to python-oracledb set the environment variable ORA_PYTHON_DRIVER_TYPE=thin 
+
+Default value of ORA_PYTHON_DRIVER_TYPE will be switched to thin started with v1.7.0 
+
+Read the guideline here: https://docs.getdbt.com/reference/warehouse-setups/oracle-setup#configure-the-python-driver-mode
+
+Documentation for python-oracledb can be found here: https://oracle.github.io/python-oracledb/[0m
+[0m17:03:00.991491 [info ] [MainThread]: Using profiles dir at C:\Users\KTagon\.dbt
+[0m17:03:00.992554 [info ] [MainThread]: Using profiles.yml file at C:\Users\KTagon\.dbt\profiles.yml
+[0m17:03:00.993569 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\KTagon\Documents\GitHub\DBT_Oracle\dbt_project.yml
+[0m17:03:00.996570 [info ] [MainThread]: adapter type: oracle
+[0m17:03:00.997569 [info ] [MainThread]: adapter version: 1.6.14
+[0m17:03:00.997569 [info ] [MainThread]: Configuration:
+[0m17:03:00.998569 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:03:00.999568 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m17:03:01.000569 [info ] [MainThread]: Required dependencies:
+[0m17:03:01.001570 [debug] [MainThread]: Executing "git --help"
+[0m17:03:01.072361 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:03:01.072361 [debug] [MainThread]: STDERR: "b''"
+[0m17:03:01.073363 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:03:01.075365 [info ] [MainThread]: Connection:
+[0m17:03:01.075365 [info ] [MainThread]:   user: hr
+[0m17:03:01.076365 [info ] [MainThread]:   database: None
+[0m17:03:01.077366 [info ] [MainThread]:   schema: hr
+[0m17:03:01.078366 [info ] [MainThread]:   protocol: tcps
+[0m17:03:01.079366 [info ] [MainThread]:   host: localhost
+[0m17:03:01.080365 [info ] [MainThread]:   port: 1521
+[0m17:03:01.081365 [info ] [MainThread]:   tns_name: None
+[0m17:03:01.081365 [info ] [MainThread]:   service: orcl.dsilan.cherryroad.com
+[0m17:03:01.082365 [info ] [MainThread]:   connection_string: None
+[0m17:03:01.083366 [info ] [MainThread]:   shardingkey: []
+[0m17:03:01.084365 [info ] [MainThread]:   supershardingkey: []
+[0m17:03:01.087363 [info ] [MainThread]:   cclass: None
+[0m17:03:01.087363 [info ] [MainThread]:   purity: None
+[0m17:03:01.088365 [info ] [MainThread]:   retry_count: 1
+[0m17:03:01.089364 [info ] [MainThread]:   retry_delay: 3
+[0m17:03:01.089364 [info ] [MainThread]:   oml_cloud_service_url: None
+[0m17:03:01.090364 [info ] [MainThread]:   session_info: {}
+[0m17:03:01.091446 [info ] [MainThread]: Registered adapter: oracle=1.6.14
+[0m17:03:01.093454 [debug] [MainThread]: Acquiring new oracle connection 'debug'
+[0m17:03:01.093454 [debug] [MainThread]: Using oracle connection "debug"
+[0m17:03:01.094454 [debug] [MainThread]: On debug: select 1 as id from dual
+[0m17:03:01.094454 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:03:01.095454 [debug] [MainThread]: oracle adapter: Attempting to connect using Oracle method: 'OracleConnectionMethod.HOST' and dsn: 'tcps://localhost:1521/orcl.dsilan.cherryroad.com?retry_count=1&retry_delay=3'
